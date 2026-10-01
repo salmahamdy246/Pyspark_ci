@@ -1,6 +1,6 @@
 from pyspark.sql import DataFrame
 from pyspark.sql import functions as F
-
+# filtering invalid records and adding tax column.
 def clean_data(df: DataFrame) -> DataFrame:
     cleaned_df = df.filter(
         (F.col("amount") > 0) & 
